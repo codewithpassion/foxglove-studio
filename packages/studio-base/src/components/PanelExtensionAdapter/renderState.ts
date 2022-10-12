@@ -193,6 +193,14 @@ function initRenderStateBuilder(): BuildRenderStateFn {
       }
     }
 
+    if (watchedFields.has("playbackSpeed")) {
+      const playbackSpeed = activeData?.speed;
+      if (playbackSpeed !== renderState.playbackSpeed) {
+        renderState.playbackSpeed = playbackSpeed;
+        shouldRender = true;
+      }
+    }
+
     if (!shouldRender) {
       return undefined;
     }

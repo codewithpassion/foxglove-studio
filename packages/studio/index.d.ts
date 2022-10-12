@@ -193,6 +193,9 @@ declare module "@foxglove/studio" {
 
     /** Application settings. This will only contain subscribed application setting key/values */
     appSettings?: ReadonlyMap<string, AppSettingValue>;
+
+    /** The speed of playback currently set on the player. */
+    playbackSpeed?: number;
   }
 
   export type PanelExtensionContext = {
